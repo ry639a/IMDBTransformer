@@ -1,0 +1,41 @@
+logs:
+  path: /logs
+
+dataset:
+  path: /dataset/aclImdb
+
+tokenizer:
+  path: /imdb_bpe
+
+training:
+  batch_size: 64
+  lr: 0.0000002
+  num_epochs: 10
+  scheduler: null
+  optimizer:
+    name: adam
+    beta1: 0.9
+    beta2: 0.98
+    epsilon: 1e-8
+
+model:
+  name: encoder
+  embed_dim: 512
+  max_len: 256
+  vocab_size: 30000
+  num_heads: 8
+  num_layers: 4
+  num_classes: 2
+
+  attention: "multi-head"
+  d_model: 512
+  num_encoder_layers: 8
+  dim_feedforward: 2048
+  dropout: 0.1
+  activation: relu
+
+  custom_encoder: null
+  layer_norm_eps: 1e-5
+  batch_first: false
+  norm_first: false
+  bias: true
